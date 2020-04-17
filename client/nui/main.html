@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script src="nui://game/ui/jquery.js"></script>
+    <script>
+        window.addEventListener('message', function( event ) {
+            switch( event.data.page ) {
+                case 'page1':
+                    $.get(`pages/page1.html`, ( element ) => {
+                        $('body').append(element);
+                    });
+                    break;
+                case 'page2':
+                    window.location.href = 'pages/page2.html';
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
